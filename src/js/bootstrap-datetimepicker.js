@@ -309,11 +309,17 @@
 
     update: function(newDate){
       var dateStr = newDate;
+
       if (!dateStr) {
+        var $input;
         if (this.isInput) {
-          dateStr = this.$element.val();
+           $input= this.$element;
         } else {
-          dateStr = this.$element.find('input').val();
+           $input =this.$element.find('input')
+        }
+        dateStr = $input.val();
+        if (!dateStr) {
+          dateStr = $input.attr('placeholder');
         }
         if (dateStr) {
           this._date = this.parseDate(dateStr);
