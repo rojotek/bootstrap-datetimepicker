@@ -321,7 +321,7 @@
         }
         dateStr = $input.val();
         if (!dateStr) {
-          dateStr = $input.attr('placeholder');
+          dateStr = $input.attr('placeholder')||'';
         }
         if (dateStr) {
           this._date = this.parseDate(dateStr);
