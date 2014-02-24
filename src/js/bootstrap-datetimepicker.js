@@ -124,6 +124,7 @@
     },
 
     show: function(e) {
+      this._unset=false;
       this.widget.show();
       this.height = this.component ? this.component.outerHeight() : this.$element.outerHeight();
       this.place();
